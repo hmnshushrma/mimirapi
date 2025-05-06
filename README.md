@@ -1,1 +1,1 @@
-# mimirapi
+# mimir-api
