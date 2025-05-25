@@ -1,39 +1,16 @@
-# Binaries
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-*.test
-*.out
-
-# Build output
-/build/
-bin/
-
-# Go modules
-vendor/
-
-# Dependency directories (if any)
-Gopkg.lock
-Gopkg.toml
-
-# IDE / Editor files
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# Logs
-*.log
-
-# Environment files
+# Ignore environment files
 .env
 .env.*
 
-# OS files
-.DS_Store
-Thumbs.db
+# Ignore binaries and build artifacts
+*.exe
+*.out
+*.test
+bin/
 
-# Other
-*.local
+# Ignore logs
+*.log
+
+# IDE settings
+.vscode/
+.idea/
