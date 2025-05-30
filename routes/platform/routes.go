@@ -7,7 +7,8 @@ import (
 )
 
 type PlatformRouter struct {
-	Handler *handler.PlatformHandler
+	Handler       *handler.PlatformHandler
+	CLinicHandler *handler.ClinicHandler
 }
 
 func NewPlatformHandler(h *handler.PlatformHandler) *PlatformRouter {
@@ -30,7 +31,7 @@ func (pr *PlatformRouter) RegisterPlatformRoutes(router *gin.Engine) {
 	group.DELETE("/users/:id", DeleteUser)
 
 	group.GET("/clinics", ListClinics)
-	group.POST("/clinics", CreateClinic)
+	group.POST("/clinics", pr.CLinicHandler.CreateClinic)
 	group.PUT("/clinics", CreateClinic)
 
 }

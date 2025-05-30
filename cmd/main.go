@@ -35,6 +35,11 @@ func main() {
 	platformHandler := handler.NewPlatformHandler(platformRepo)
 	platformRoutes := platformRoutes.NewPlatformHandler(platformHandler)
 
+	clinicRepo := repository.NewClinicRepo(database)
+	clinicHandler := handler.NewClinicHandler(clinicRepo, database)
+
+	platformRoutes.CLinicHandler = clinicHandler
+
 	platformRoutes.RegisterPlatformRoutes(router)
 
 	// Start server
